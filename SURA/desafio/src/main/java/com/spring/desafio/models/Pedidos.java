@@ -1,10 +1,8 @@
 package com.spring.desafio.models;
 
 import java.io.Serializable;
-import java.util.Calendar;
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -41,11 +39,6 @@ public class Pedidos implements Serializable {
 		
 		@NotNull		
 		private String sessao;
-
-		@OneToOne(fetch = FetchType.LAZY,
-	            cascade =  CascadeType.ALL,
-	            mappedBy = "pedidos")
-	    private PedidoItens pedidoItens;
 
 		public long getId() {
 			return id;
@@ -85,14 +78,6 @@ public class Pedidos implements Serializable {
 
 		public void setSessao(String sessao) {
 			this.sessao = sessao;
-		}
-
-		public PedidoItens getPedidoItens() {
-			return pedidoItens;
-		}
-
-		public void setPedidoItens(PedidoItens pedidoItens) {
-			this.pedidoItens = pedidoItens;
 		}
 				
 }

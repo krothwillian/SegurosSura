@@ -2,13 +2,10 @@ package com.spring.desafio.models;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.sun.istack.NotNull;
@@ -26,11 +23,6 @@ public class Categorias implements Serializable {
 		@NotNull
 		private String nome;
 		
-		@OneToOne(fetch = FetchType.LAZY,
-	            cascade =  CascadeType.ALL,
-	            mappedBy = "categorias")
-	    private Produtos produtos;
-
 		public long getId() {
 			return id;
 		}
@@ -45,14 +37,6 @@ public class Categorias implements Serializable {
 
 		public void setNome(String nome) {
 			this.nome = nome;
-		}
-
-		public Produtos getProdutos() {
-			return produtos;
-		}
-
-		public void setProdutos(Produtos produtos) {
-			this.produtos = produtos;
 		}
 		
 }		

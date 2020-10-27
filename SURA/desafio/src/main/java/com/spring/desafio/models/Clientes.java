@@ -1,14 +1,11 @@
 package com.spring.desafio.models;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Table;
 
 import java.io.Serializable;
 
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.GenerationType;
 import javax.persistence.GeneratedValue;
 
@@ -48,11 +45,6 @@ public class Clientes implements Serializable {
 		@NotNull
 		private String estado;
 		
-		@OneToOne(fetch = FetchType.LAZY,
-	            cascade =  CascadeType.ALL,
-	            mappedBy = "clientes")
-	    private Pedidos pedido;
-
 		public long getId() {
 			return id;
 		}
@@ -123,14 +115,6 @@ public class Clientes implements Serializable {
 
 		public void setEstado(String estado) {
 			this.estado = estado;
-		}
-
-		public Pedidos getPedido() {
-			return pedido;
-		}
-
-		public void setPedido(Pedidos pedido) {
-			this.pedido = pedido;
 		}
 
 }

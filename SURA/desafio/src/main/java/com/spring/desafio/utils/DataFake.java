@@ -16,7 +16,7 @@ public class DataFake {
     @Autowired
     ClientesRepository cliRepository;
 
-    //@PostConstruct
+    @PostConstruct
     public void savePosts(){
 
         List<Clientes> postList = new ArrayList<>();

@@ -34,8 +34,8 @@ public class ClientesController {
 	
 	@ApiOperation(value="Consultar um determinado cliente pelo nome")
 	@RequestMapping(value = "/cliente/{nome}", method = RequestMethod.GET)
-	public Clientes consultaCliente(@PathVariable(value="nome") String nome){
-		return clienteService.consultaCliente(nome);
+	public List<Clientes> consultarCliente(@PathVariable(value="nome") String nome){
+		return clienteService.consultarCliente(nome);
 	}
 
 	@ApiOperation(value = "Salvar um cliente")

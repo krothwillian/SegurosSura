@@ -23,7 +23,7 @@ public class ClientesServiceImpl implements ClientesService{
 	}
 	
 	@Override
-	public Clientes consultaCliente(String nome) {
+	public List<Clientes> consultarCliente(String nome) {
 		return clienteRepository.findByNome(nome);
 	}
 
